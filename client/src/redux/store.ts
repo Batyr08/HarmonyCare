@@ -2,13 +2,18 @@ import { configureStore } from "@reduxjs/toolkit";
 import userSlice from "./userSlice";
 import serviceSlice from "./serviceSlice";
 import servPage from "./servPageSlice"
-
+import doctorSlice from "./dictorsSlice";
+import order from "./orderSlice";
+import languageSlice from "./languageSlice";
 
 const storeOptions = {
   reducer: {
     userSlice,
     serviceSlice,
-    servPage
+    servPage,
+    doctorSlice,
+    order,
+    languageSlice
   },
 };
 
