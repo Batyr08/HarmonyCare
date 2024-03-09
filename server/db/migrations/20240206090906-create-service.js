@@ -18,7 +18,13 @@ module.exports = {
       promo: {
         type: Sequelize.STRING
       },
+      price: {
+        type: Sequelize.STRING
+      },
       logo: {
+        type: Sequelize.STRING
+      },
+      img: {
         type: Sequelize.STRING
       },
       createdAt: {

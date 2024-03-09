@@ -25,6 +25,12 @@ const sessionConfig = {
 const userRouter = require('./routes/user')
 const accountRouter = require('./routes/doctor')
 const serviceRouter = require('./routes/service.router')
+const appointmentRouter = require('./routes/appointment')
+const orderRouter = require("./routes/order")
+const paymentRouter = require('./routes/payment');
+const stripeRouter = require('./routes/stripe.payment');
+const passwordRouter = require('./routes/nodemailer')
+
 
 
 const PORT = process.env.PORT;
@@ -45,6 +51,11 @@ app.use(express.static(path.join(process.cwd(), 'public/')));
 app.use('/doctorsaccount', accountRouter);
 app.use('/api', userRouter)
 app.use('/services', serviceRouter);
+app.use('/appointment', appointmentRouter);
+app.use('/clientsaccount', orderRouter);
+app.use('/payment', paymentRouter);
+app.use('/create-checkout-session', stripeRouter);
+app.use('/recovery', passwordRouter)
 
 app.listen(PORT, () => {
   console.log(`Сервер запущен на ${PORT} порту`);

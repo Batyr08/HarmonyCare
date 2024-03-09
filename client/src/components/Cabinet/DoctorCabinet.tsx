@@ -12,7 +12,9 @@ export default function DoctorCabinet() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:9000/doctorsaccount", {withCredentials: true})
+      .get("http://localhost:9000/doctorsaccount", {
+        withCredentials: true,
+      })
       .then((response) => {
         setUserData(response.data.user);
       })
@@ -52,20 +54,20 @@ export default function DoctorCabinet() {
 
   return (
     <div className="mx-auto max-w-5xl my-16">
-      <div className="lg:flex lg:items-center lg:justify-between my-16">
+      <div className="lg:flex lg:items-center lg:justify-between my-16 pt-12">
         {userData && (
           <div className="min-w-0 flex-1">
-            <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
+            <h2 className="text-2xl font-bold leading-7 text-cyan-900 sm:truncate sm:text-3xl sm:tracking-tight">
               {userData.specialization} {userData.login}
             </h2>
             <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
-              <div className="mt-2 flex items-center text-sm text-gray-500">
+              <div className="mt-2 flex items-center text-sm text-cyan-900">
                 {userData.experience} years of experience
               </div>
-              <div className="mt-2 flex items-center text-sm text-gray-500">
+              <div className="mt-2 flex items-center text-sm text-cyan-900">
                 {userData.email}
               </div>
-              <div className="mt-2 flex items-center text-sm text-gray-500">
+              <div className="mt-2 flex items-center text-sm text-cyan-900">
                 {userData.phone_number}
               </div>
             </div>
@@ -78,7 +80,7 @@ export default function DoctorCabinet() {
               <button
                 type="button"
                 onClick={() => setOpenForm(false)}
-                className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-cyan-900 shadow-sm ring-1 ring-inset ring-gray-600 hover:bg-gray-50"
               >
                 Add patient
               </button>
@@ -86,7 +88,7 @@ export default function DoctorCabinet() {
               <button
                 type="button"
                 onClick={() => setOpenForm(true)}
-                className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-cyan-900 shadow-sm ring-1 ring-inset ring-gray-600 hover:bg-gray-50"
               >
                 Add patient
               </button>
@@ -99,7 +101,7 @@ export default function DoctorCabinet() {
         )}
       </div>
 
-      <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
+      <h2 className="text-2xl font-bold leading-7 sm:truncate sm:text-3xl sm:tracking-tight">
         Patients
       </h2>
       <ul role="list" className="divide-y divide-gray-100">
